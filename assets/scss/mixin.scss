@@ -1,0 +1,160 @@
+/*----------------------------------------------------
+  #HEADING SIZES
+  --------------------------------------------------*/
+// You can use values from http://type-scale.com/
+// Or random; values :)
+
+$fontSize-min:      16px;
+$fontSize-max:      24px;
+$lineHeight-base:   1.5;
+
+
+// Type Scale Settings
+$Width-min:       320px;
+$Width-max:       1280px;
+$scaleFactor:     1.2;
+$baseline:        1.5rem;
+
+
+// Type Scale Chart
+$scale6:          $scaleFactor * $scaleFactor * $scaleFactor * $scaleFactor * $scaleFactor * $scaleFactor;
+$scale5:          $scaleFactor * $scaleFactor * $scaleFactor * $scaleFactor * $scaleFactor;
+$scale4:          $scaleFactor * $scaleFactor * $scaleFactor * $scaleFactor;
+$scale3:          $scaleFactor * $scaleFactor * $scaleFactor;
+$scale2:          $scaleFactor * $scaleFactor;
+$scale1:          $scaleFactor;
+
+
+/*----------------------------------------------------------------------
+  Responsive Type
+  More Infos: http://madebymike.com.au/writing/fluid-type-calc-examples/
+  ------------------------------------------------------------------- */
+
+@mixin fluid-type($properties, $min-vw, $max-vw, $min-value, $max-value) {
+  @each $property in $properties {
+    #{$property}: $min-value;
+  }
+
+  @media screen and (min-width: $min-vw) {
+    @each $property in $properties {
+      #{$property}: calc(#{$min-value} + #{strip-unit($max-value - $min-value)} * (100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)});
+    }
+  }
+
+  @media screen and (min-width: $max-vw) {
+    @each $property in $properties {
+      #{$property}: $max-value;
+    }
+  }
+}
+
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+
+/*----------------------------------------------------
+  #ROOT
+  --------------------------------------------------*/
+
+html {
+  @include fluid-type(font-size, $Width-min, $Width-max, $fontSize-min, $fontSize-max);
+  line-height: $lineHeight-base;
+}
+body {
+    font-size: 18px;
+    line-height: 1.8;
+    font-weight: 400
+}
+@media screen and (min-width:1280px) {
+    body {
+        font-size: -webkit-calc(18px + 5.4 * ((100vw - 1280px) / 320));
+        font-size: -webkit-calc(18px + 5.4 * ((100vw - 1280px) / 320));
+        font-size: calc(18px + 5.4 * ((100vw - 1280px) / 320));
+    }
+}
+@media screen and (min-width:1680px) {
+    body {
+        font-size: 24px
+    }
+}
+
+/*----------------------------------------------------
+  #HEADING
+  --------------------------------------------------*/
+
+h1,h2,h3,h4,h5,h6 {
+  font-weight: 700;
+  word-wrap: break-word;
+  line-height: 1.2;
+  margin-bottom: $baseline;
+}
+
+h1 {
+  @include fluid-type(font-size, $Width-min, $Width-max, $fontSize-min * $scale6, $fontSize-max * $scale6);
+}
+
+h2 {
+  @include fluid-type(font-size, $Width-min, $Width-max, $fontSize-min * $scale5, $fontSize-max * $scale5);
+}
+
+h3 {
+  @include fluid-type(font-size, $Width-min, $Width-max, $fontSize-min * $scale4, $fontSize-max * $scale4);
+}
+
+h4 {
+  @include fluid-type(font-size, $Width-min, $Width-max, $fontSize-min * $scale3, $fontSize-max * $scale3);
+}
+
+h5 {
+  @include fluid-type(font-size, $Width-min, $Width-max, $fontSize-min * $scale2, $fontSize-max * $scale2);
+}
+
+h6 {
+  @include fluid-type(font-size, $Width-min, $Width-max, $fontSize-min * $scale1, $fontSize-max * $scale1);
+}
+
+
+
+/*----------------------------------------------------
+  #HEADING VERTICAL BALANCE
+  --------------------------------------------------*/
+
+// Of course, ou can use your own values
+$h1:    2rem;
+$h2:    1.75rem;
+$h3:    1.5rem;
+$h4:    1.25rem;
+$h5:    1.15rem;
+$h6:    1rem;
+
+
+h1 {
+  margin-top: -webkit-calc((#{$baseline} - #{$h1}) + #{$baseline});
+  margin-top: calc((#{$baseline} - #{$h1}) + #{$baseline});
+}
+
+h2 {
+  margin-top: -webkit-calc((#{$baseline} - #{$h2}) + #{$baseline}*2);
+  margin-top: calc((#{$baseline} - #{$h2}) + #{$baseline}*2);
+}
+
+h3 {
+  margin-top: -webkit-calc((#{$baseline} - #{$h3}) + #{$baseline}*2);
+  margin-top: calc((#{$baseline} - #{$h3}) + #{$baseline}*2);
+}
+
+h4 {
+  margin-top: -webkit-calc((#{$baseline} - #{$h4}) + #{$baseline}*2);
+  margin-top: calc((#{$baseline} - #{$h4}) + #{$baseline}*2);
+}
+
+h5 {
+  margin-top: -webkit-calc((#{$baseline} - #{$h5}) + #{$baseline}*2);
+  margin-top: calc((#{$baseline} - #{$h5}) + #{$baseline}*2);
+}
+
+h6 {
+  margin-top: -webkit-calc((#{$baseline} - #{$h6}) + #{$baseline}*2);
+  margin-top: calc((#{$baseline} - #{$h6}) + #{$baseline}*2);
+}

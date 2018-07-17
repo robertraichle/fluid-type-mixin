@@ -39,10 +39,10 @@ I've renounced a Font Map. The magic happens in the mixin.scss ;)
 	}
 
 
-Change the parameters for your own setup that you want.
+Change the parameters for your own setup that you want. 
 
 
 ## Credits
-- [Mike Mike Riethmuller](https://www.madebymike.com.au/writing/fluid-type-calc-examples/) - for some inspiration
+- [Mike Riethmuller](https://www.madebymike.com.au/writing/fluid-type-calc-examples/) - for some inspiration
 - [Hugo Giraudel & Eduardo Bouças](http://include-media.com/) - for Sass media
 

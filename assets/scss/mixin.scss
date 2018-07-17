@@ -4,6 +4,7 @@
 // You can use values from http://type-scale.com/
 // Or random; values :)
 
+// Basic Settings
 $fontSize-min:      16px;
 $fontSize-max:      24px;
 $lineHeight-base:   1.5;
@@ -23,6 +24,9 @@ $scale4:          $scaleFactor * $scaleFactor * $scaleFactor * $scaleFactor;
 $scale3:          $scaleFactor * $scaleFactor * $scaleFactor;
 $scale2:          $scaleFactor * $scaleFactor;
 $scale1:          $scaleFactor;
+
+// Import any fonts
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:400,400i,700,700i');
 
 
 /*----------------------------------------------------------------------
@@ -64,7 +68,8 @@ html {
 body {
     font-size: 18px;
     line-height: 1.8;
-    font-weight: 400
+    font-weight: 400;
+    font-family: 'Ubuntu', sans-serif
 }
 @media screen and (min-width:1280px) {
     body {
@@ -84,7 +89,7 @@ body {
   --------------------------------------------------*/
 
 h1,h2,h3,h4,h5,h6 {
-  font-weight: 700;
+  font-weight: 400;
   word-wrap: break-word;
   line-height: 1.2;
   margin-bottom: $baseline;

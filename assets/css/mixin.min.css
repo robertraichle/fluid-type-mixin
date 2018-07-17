@@ -1,16 +1,17 @@
 /*---------------------------------------------------- #HEADING SIZES --------------------------------------------------*/
+@import url("https://fonts.googleapis.com/css?family=Ubuntu:400,400i,700,700i");
 /*---------------------------------------------------------------------- Responsive Type More Infos: http://madebymike.com.au/writing/fluid-type-calc-examples/ ------------------------------------------------------------------- */
 /*---------------------------------------------------- #ROOT --------------------------------------------------*/
 html { font-size: 16px; line-height: 1.5; }
 @media screen and (min-width: 320px) { html { font-size: calc(16px + 8 * (100vw - 320px) / 960); } }
 @media screen and (min-width: 1280px) { html { font-size: 24px; } }
 
-body { font-size: 18px; line-height: 1.8; font-weight: 400; }
+body { font-size: 18px; line-height: 1.8; font-weight: 400; font-family: "Ubuntu", sans-serif; }
 
 @media screen and (min-width: 1280px) { body { font-size: calc(18px + 5.4 * ((100vw - 1280px) / 320)); } }
 @media screen and (min-width: 1680px) { body { font-size: 24px; } }
 /*---------------------------------------------------- #HEADING --------------------------------------------------*/
-h1, h2, h3, h4, h5, h6 { font-weight: 700; word-wrap: break-word; line-height: 1.2; margin-bottom: 1.5rem; }
+h1, h2, h3, h4, h5, h6 { font-weight: 400; word-wrap: break-word; line-height: 1.2; margin-bottom: 1.5rem; }
 
 h1 { font-size: 47.775744px; }
 @media screen and (min-width: 320px) { h1 { font-size: calc(47.775744px + 23.887872 * (100vw - 320px) / 960); } }

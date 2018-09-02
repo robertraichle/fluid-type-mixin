@@ -1,4 +1,10 @@
 /*---------------------------------------------------- #HEADING SIZES --------------------------------------------------*/
+/* You can use values from http://type-scale.com/*/
+/* Or random; values :)*/
+/* Basic Settings*/
+/* Type Scale Settings*/
+/* Type Scale Chart*/
+/* Import any fonts*/
 @import url("https://fonts.googleapis.com/css?family=Ubuntu:400,400i,700,700i");
 /*---------------------------------------------------------------------- Responsive Type More Infos: http://madebymike.com.au/writing/fluid-type-calc-examples/ ------------------------------------------------------------------- */
 /*---------------------------------------------------- #ROOT --------------------------------------------------*/
@@ -38,6 +44,7 @@ h6 { font-size: 19.2px; }
 @media screen and (min-width: 1280px) { h6 { font-size: 28.8px; } }
 
 /*---------------------------------------------------- #HEADING VERTICAL BALANCE --------------------------------------------------*/
+/* Of course, ou can use your own values*/
 h1 { margin-top: calc((1.5rem - 2rem) + 1.5rem); }
 
 h2 { margin-top: calc((1.5rem - 1.75rem) + 1.5rem*2); }

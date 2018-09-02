@@ -1,23 +1,23 @@
 /*----------------------------------------------------
   #HEADING SIZES
   --------------------------------------------------*/
-// You can use values from http://type-scale.com/
-// Or random; values :)
+/* You can use values from http://type-scale.com/*/
+/* Or random; values :)*/
 
-// Basic Settings
+/* Basic Settings*/
 $fontSize-min:      16px;
 $fontSize-max:      24px;
 $lineHeight-base:   1.5;
 
 
-// Type Scale Settings
+/* Type Scale Settings*/
 $Width-min:       320px;
 $Width-max:       1280px;
 $scaleFactor:     1.2;
 $baseline:        1.5rem;
 
 
-// Type Scale Chart
+/* Type Scale Chart*/
 $scale6:          $scaleFactor * $scaleFactor * $scaleFactor * $scaleFactor * $scaleFactor * $scaleFactor;
 $scale5:          $scaleFactor * $scaleFactor * $scaleFactor * $scaleFactor * $scaleFactor;
 $scale4:          $scaleFactor * $scaleFactor * $scaleFactor * $scaleFactor;
@@ -25,7 +25,7 @@ $scale3:          $scaleFactor * $scaleFactor * $scaleFactor;
 $scale2:          $scaleFactor * $scaleFactor;
 $scale1:          $scaleFactor;
 
-// Import any fonts
+/* Import any fonts*/
 @import url('https://fonts.googleapis.com/css?family=Ubuntu:400,400i,700,700i');
 
 
@@ -38,9 +38,10 @@ $scale1:          $scaleFactor;
   @each $property in $properties {
     #{$property}: $min-value;
   }
-
+  
   @media screen and (min-width: $min-vw) {
     @each $property in $properties {
+      #{$property}: -webkit-calc(#{$min-value} + #{strip-unit($max-value - $min-value)} * (100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)});
       #{$property}: calc(#{$min-value} + #{strip-unit($max-value - $min-value)} * (100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)});
     }
   }
@@ -126,7 +127,7 @@ h6 {
   #HEADING VERTICAL BALANCE
   --------------------------------------------------*/
 
-// Of course, ou can use your own values
+/* Of course, you can use your own values*/
 $h1:    2rem;
 $h2:    1.75rem;
 $h3:    1.5rem;
